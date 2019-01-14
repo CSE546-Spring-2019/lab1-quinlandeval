@@ -1,0 +1,6 @@
+This program is designed to evaluate the length of a file and search the file for a string.
+
+Make: 
+	make
+Run: 
+	./count <input-file> <search-string> <output-file>
