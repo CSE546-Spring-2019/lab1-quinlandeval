@@ -9,7 +9,8 @@
 
 int main(int argc, char *argv[]) {
 	FILE *input, *output;
-	int fileSize, stringLength, matches, position, tempPosition;
+	int stringLength, position, tempPosition;
+	long fileSize, matches;
 	char search[20];
 	char string[20];
 	char size[60];
@@ -46,7 +47,7 @@ int main(int argc, char *argv[]) {
 	// Evaluate size of file.
 	fseek(input, 0, SEEK_END);
 	fileSize = ftell(input);
-	snprintf(size, 30, "Size of file is %d\n", fileSize);	
+	snprintf(size, 30, "Size of file is %ld\n", fileSize);	
 	fwrite(size, 1, 30, output);
 	fseek(input, 0, SEEK_SET);
 	printf(size);
@@ -74,7 +75,7 @@ int main(int argc, char *argv[]) {
 	}
 	
 	// Output results of search.
-	snprintf(match, 40, "Number of matches = %i \n", matches);
+	snprintf(match, 40, "Number of matches = %ld \n", matches);
 	fwrite(match, 1, 40, output);
 	printf(match);
 
