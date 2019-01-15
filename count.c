@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	// Attempt to open output file.
-	output = fopen(argv[3], "wb");
+	output = fopen(argv[3], "w");
 	if (output == NULL) {
 		printf("Error opening output file. \n");
 		exit(-1);
