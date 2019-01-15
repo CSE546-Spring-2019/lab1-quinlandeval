@@ -1,4 +1,4 @@
 all: count
 
 client: count.c
-	gcc -g -Wall -o count count.c
+	gcc -g -o count count.c

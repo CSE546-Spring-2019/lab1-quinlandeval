@@ -13,8 +13,6 @@ int main(int argc, char *argv[]) {
 	long int position, tempPosition, fileSize, matches;
 	char search[20];
 	char string[20];
-	char size[60];
-	char match[60];
 
 	// Check number of arguments.
 	if (argc < 4) {
@@ -47,10 +45,9 @@ int main(int argc, char *argv[]) {
 	// Evaluate size of file.
 	fseek(input, 0, SEEK_END);
 	fileSize = ftell(input);
-	snprintf(size, 60, "Size of file is %li \n", fileSize);	
-	fwrite(size, 1, sizeof(size), output);
+	fprintf(output, "Size of file is %li \n", fileSize);	
 	fseek(input, 0, SEEK_SET);
-	printf(size);
+	printf("Size of file is %li \n", fileSize);
 
 	// Set up variables for loop.
 	matches = 0;
@@ -75,9 +72,8 @@ int main(int argc, char *argv[]) {
 	}
 	
 	// Output results of search.
-	snprintf(match, 60, "Number of matches = %li \n", matches);
-	fwrite(match, 1, sizeof(match), output);
-	printf(match);
+	fprintf(output, "Number of matches = %li \n", matches);
+	printf("Number of matches = %li \n", matches);
 
 	// Close input and output files.
 	fclose(input);
