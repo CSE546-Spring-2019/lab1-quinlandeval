@@ -12,8 +12,8 @@ int main(int argc, char *argv[]) {
 	int fileSize, stringLength, matches, position, tempPosition;
 	char search[20];
 	char string[20];
-	char size[30];
-	char match[40];
+	char size[60];
+	char match[60];
 
 	// Check number of arguments.
 	if (argc < 4) {
